@@ -4,16 +4,16 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
-#include "Main_Player.generated.h"
+#include "MyCharacter.generated.h"
 
 UCLASS()
-class CHAOS_HORIZON_API AMain_Player : public ACharacter
+class CHAOS_HORIZON_API AMyCharacter : public ACharacter
 {
 	GENERATED_BODY()
 
 public:
 	// Sets default values for this character's properties
-	AMain_Player();
+	AMyCharacter();
 
 protected:
 	// Called when the game starts or when spawned
@@ -22,8 +22,10 @@ protected:
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
-
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
+protected:
+	void MoveForward(float AxisVal);
+	void MoveRight(float AxisVal);
 };
